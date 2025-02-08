@@ -1,16 +1,16 @@
 import 'dart:ffi';
-
 import 'package:flutter/material.dart';
 
 void main() {
   runApp(const MyApp());
 }
 
-String name = 'asdfas';
-int number = 1;
-double two = 2.512312312;
-List myList = ['chocolate', 'ice'];
-Map<String, dynamic> myMap = {'String': 'String', 'String2': 234234234};
+// Data types
+// String name = 'asdfas';
+// int number = 1;
+// double two = 2.512312312;
+// List myList = ['chocolate', 'ice'];
+// Map<String, dynamic> myMap = {'String': 'String', 'String2': 234234234};
 
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
