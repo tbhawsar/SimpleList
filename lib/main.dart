@@ -97,34 +97,40 @@ class _MyHomePageState extends State<MyHomePage> {
         // Here we take the value from the MyHomePage object that was created by
         // the App.build method, and use it to set our appbar title.
         title: Text(widget.title),
+        leading: Icon(Icons.notifications),
       ),
-      body: Center(
-        // Center is a layout widget. It takes a single child and positions it
-        // in the middle of the parent.
-        child: Container(
-          color: Colors.blueGrey,
-          child: Row(
-            mainAxisSize: MainAxisSize.min,
-            children: [
-              Container(
-                height: 100.0,
-                width: 100.0,
-                decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(25.0),
-                  color: Colors.deepPurple,
-                ),
-                child: Center(child: Text('data'),),
+      body: 
+      
+      Padding(
+        padding: const EdgeInsets.all(35.0),
+        child: Stack(
+          alignment: Alignment(0, 0.95),
+          
+          children: [
+            SizedBox(
+              height: double.infinity,
+              child: Image.asset(
+                'assets/images/background.jpeg',
+                fit: BoxFit.cover,
               ),
-              Container(
-                height: 100.0,
-                width: 100.0,
-                decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(25.0),
-                  color: Colors.deepPurple,
-                ),
+            ),
+            SizedBox(
+              
+              child: Row(
+                crossAxisAlignment: CrossAxisAlignment.end,
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [Text(
+                  'Flutter',
+                  style: TextStyle(
+                    fontSize: 20,
+                    fontWeight: FontWeight.bold,
+                    fontStyle: FontStyle.italic,
+                  )
+                  ),
+                  ],
               ),
-            ],
-          ),
+            )
+          ],
         ),
       ),
       floatingActionButton: FloatingActionButton(
