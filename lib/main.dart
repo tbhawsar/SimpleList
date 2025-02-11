@@ -14,41 +14,65 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
           colorScheme: ColorScheme.fromSeed(
               seedColor: Colors.teal, brightness: Brightness.dark)),
-      home: Scaffold(
-        appBar: AppBar(
-          title: Text('Hello World'),
-          centerTitle: true,
-          leading: Icon(Icons.menu),
-          actions: [
-            IconButton(
-              icon: Icon(Icons.search),
-              onPressed: () {},
-            ),
-            IconButton(
-              icon: Icon(Icons.more_vert),
-              onPressed: () {},
-            ),
-          ],
-        ),
-        bottomNavigationBar:
-            BottomNavigationBar(
-                items: const <BottomNavigationBarItem>[
-                  BottomNavigationBarItem(
-                    icon: Icon(Icons.home),
-                    label: 'Home',
+      home: SafeArea(
+        child: Scaffold(
+          appBar: AppBar(
+            title: Text('Hello World'),
+            centerTitle: true,
+            actions: [
+              IconButton(
+                icon: Icon(Icons.search),
+                onPressed: () {},
+              ),
+              IconButton(
+                icon: Icon(Icons.more_vert),
+                onPressed: () {},
+              ),
+            ],
+          ),
+            drawer: Drawer(
+              child: ListView(
+                children: [
+                  ListTile(
+                    title: Text('Home'),
+                    onTap: () => print('Home pressed'),
                   ),
-                  BottomNavigationBarItem(
-                    icon: Icon(Icons.business),
-                    label: 'Business',
+                  ListTile(
+                    title: Text('About'),
+                    onTap: () => print('About pressed'),
                   ),
-                  BottomNavigationBarItem(
-                    icon: Icon(Icons.school),
-                    label: 'School',
+                  ListTile(
+                    title: Text('Contact'),
+                    onTap: () => print('Contact pressed'),
                   ),
                 ],
               ),
-        body: Center(
-          child: Text('Hello World'),
+            ),
+          bottomNavigationBar:
+              BottomNavigationBar(
+                  items: const <BottomNavigationBarItem>[
+                    BottomNavigationBarItem(
+                      icon: Icon(Icons.home),
+                      label: 'Home',
+                    ),
+                    BottomNavigationBarItem(
+                      icon: Icon(Icons.business),
+                      label: 'Business',
+                    ),
+                    BottomNavigationBarItem(
+                      icon: Icon(Icons.school),
+                      label: 'School',
+                    ),
+                  ],
+                  onTap: (value) => print('button $value pressed'),
+                ),
+                floatingActionButton: FloatingActionButton(
+                  onPressed: () => print('Floating Action Button pressed'),
+                  child: Icon(Icons.add),
+                ),
+          body: Center(
+            child: Text('Hello World'),
+          ),
         ),
       ),
     );
