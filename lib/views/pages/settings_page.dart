@@ -15,20 +15,20 @@ class SettingsPage extends StatelessWidget {
         children: [
           Text('Settings Page', style: TextStyle(fontSize: 30)),
           ValueListenableBuilder(
-            valueListenable: isDarkMode,
-            builder: (context, darkMode, child) {
+            valueListenable: isDarkModeNotifier,
+            builder: (context, isDarkMode, child) {
               return FloatingActionButton(
                 onPressed: () {
-                  isDarkMode.value = !darkMode;
+                  isDarkModeNotifier.value = !isDarkMode;
                 },
-                child: darkMode
-                    ? Icon(Icons.lightbulb_outline)
-                    : Icon(Icons.lightbulb),
+                child: isDarkMode
+                    ? Icon(Icons.light_mode)
+                    : Icon(Icons.dark_mode),
               );
             },
           ),
-          ValueListenableBuilder(valueListenable: isDarkMode, builder: (context, darkMode, child) {
-            return Text(darkMode ? 'Dark Mode Enabled' : 'Dark Mode Disabled');
+          ValueListenableBuilder(valueListenable: isDarkModeNotifier, builder: (context, isDarkMode, child) {
+            return Text(isDarkMode ? 'Dark Mode Enabled' : 'Dark Mode Disabled');
           },)
         ],
       ),

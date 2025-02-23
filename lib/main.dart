@@ -12,13 +12,13 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return ValueListenableBuilder(
-      valueListenable: isDarkMode,
-      builder: (context, darkMode, child) {
+      valueListenable: isDarkModeNotifier,
+      builder: (context, isDarkMode, child) {
         return MaterialApp(
           title: 'SimpleList',
           theme: ThemeData(
               primarySwatch: Colors.blue,
-              brightness: darkMode ? Brightness.dark : Brightness.light),
+              brightness: isDarkMode ? Brightness.dark : Brightness.light),
           home: WidgetTree(),
         );
       },
