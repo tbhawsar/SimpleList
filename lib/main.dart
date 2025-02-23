@@ -1,79 +1,76 @@
 import 'package:flutter/material.dart';
 
 void main() {
-  runApp(const MyApp());
+  runApp(MyApp());
 }
 
 class MyApp extends StatelessWidget {
-  const MyApp({super.key});
-
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      debugShowCheckedModeBanner: false,
-      theme: ThemeData(
-          colorScheme: ColorScheme.fromSeed(
-              seedColor: Colors.teal, brightness: Brightness.dark)),
-      home: SafeArea(
-        child: Scaffold(
-          appBar: AppBar(
-            title: Text('Hello World'),
-            centerTitle: true,
-            actions: [
-              IconButton(
-                icon: Icon(Icons.search),
-                onPressed: () {},
-              ),
-              IconButton(
-                icon: Icon(Icons.more_vert),
-                onPressed: () {},
-              ),
-            ],
-          ),
-            drawer: Drawer(
-              child: ListView(
+      title: 'Counter App',
+      theme: ThemeData(primarySwatch: Colors.blue, brightness: Brightness.dark),
+      home: MyHomePage(),
+    );
+  }
+}
+
+class MyHomePage extends StatefulWidget {
+  const MyHomePage({super.key});
+
+  @override
+  State<MyHomePage> createState() => _MyHomePageState();
+}
+
+class _MyHomePageState extends State<MyHomePage> {
+  int pageIndex = 0;
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        title: Text('Counter App'),
+        centerTitle: true,
+      ),
+      body: pageIndex == 0
+          ? Container(
+              color: Colors.blue,
+              height: double.infinity,
+              width: double.infinity,
+              child: Column(
+                mainAxisAlignment: MainAxisAlignment.center,
                 children: [
-                  ListTile(
-                    title: Text('Home'),
-                    onTap: () => print('Home pressed'),
-                  ),
-                  ListTile(
-                    title: Text('About'),
-                    onTap: () => print('About pressed'),
-                  ),
-                  ListTile(
-                    title: Text('Contact'),
-                    onTap: () => print('Contact pressed'),
-                  ),
+                  Text('Page $pageIndex', style: TextStyle(fontSize: 30)),
+                ],
+              ),
+            )
+          : Container(
+              color: Colors.red,
+              height: double.infinity,
+              width: double.infinity,
+              child: Column(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  Text('Page $pageIndex', style: TextStyle(fontSize: 30)),
                 ],
               ),
             ),
-          bottomNavigationBar:
-              BottomNavigationBar(
-                  items: const <BottomNavigationBarItem>[
-                    BottomNavigationBarItem(
-                      icon: Icon(Icons.home),
-                      label: 'Home',
-                    ),
-                    BottomNavigationBarItem(
-                      icon: Icon(Icons.business),
-                      label: 'Business',
-                    ),
-                    BottomNavigationBarItem(
-                      icon: Icon(Icons.school),
-                      label: 'School',
-                    ),
-                  ],
-                  onTap: (value) => print('button $value pressed'),
-                ),
-                floatingActionButton: FloatingActionButton(
-                  onPressed: () => print('Floating Action Button pressed'),
-                  child: Icon(Icons.add),
-                ),
-          body: Center(
-            child: Text('Hello World'),
+      bottomNavigationBar: BottomNavigationBar(
+        items: [
+          BottomNavigationBarItem(
+            icon: Icon(Icons.home),
+            label: 'A',
           ),
-        ),
+          BottomNavigationBarItem(
+            icon: Icon(Icons.settings),
+            label: 'B',
+          ),
+        ],
+        currentIndex: pageIndex,
+        onTap: (index) {
+          setState(() {
+            pageIndex = index;
+          });
+        },
       ),
     );
   }
