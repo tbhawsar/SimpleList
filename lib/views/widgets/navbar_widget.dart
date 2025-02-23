@@ -21,6 +21,11 @@ class NavbarWidget extends StatelessWidget {
               activeIcon: Icon(Icons.settings),
               label: 'Settings',
             ),
+            BottomNavigationBarItem(
+              icon: Icon(Icons.input_outlined),
+              activeIcon: Icon(Icons.input),
+              label: 'Inputs',
+            ),
           ],
           onTap: (int value) {
             selectedPageNotifier.value = value;
