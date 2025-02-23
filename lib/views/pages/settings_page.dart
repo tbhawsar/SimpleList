@@ -6,32 +6,29 @@ class SettingsPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      color: Colors.red,
-      height: double.infinity,
-      width: double.infinity,
-      child: Column(
-        mainAxisAlignment: MainAxisAlignment.center,
-        children: [
-          Text('Settings Page', style: TextStyle(fontSize: 30)),
-          ValueListenableBuilder(
-            valueListenable: isDarkModeNotifier,
-            builder: (context, isDarkMode, child) {
-              return FloatingActionButton(
-                onPressed: () {
-                  isDarkModeNotifier.value = !isDarkMode;
-                },
-                child: isDarkMode
-                    ? Icon(Icons.light_mode)
-                    : Icon(Icons.dark_mode),
-              );
-            },
-          ),
-          ValueListenableBuilder(valueListenable: isDarkModeNotifier, builder: (context, isDarkMode, child) {
-            return Text(isDarkMode ? 'Dark Mode Enabled' : 'Dark Mode Disabled');
-          },)
-        ],
-      ),
-    );
+    return ValueListenableBuilder(
+        valueListenable: isDarkModeNotifier,
+        builder: (context, isDarkMode, child) {
+          return Container(
+            color: isDarkMode ? const Color.fromARGB(255, 29, 7, 6) : Colors.red,
+            height: double.infinity,
+            width: double.infinity,
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                Text('Settings Page', style: TextStyle(fontSize: 30)),
+                FloatingActionButton(
+                  onPressed: () {
+                    isDarkModeNotifier.value = !isDarkMode;
+                  },
+                  child: isDarkMode
+                      ? Icon(Icons.light_mode)
+                      : Icon(Icons.dark_mode),
+                ),
+                Text(isDarkMode ? 'Dark Mode Enabled' : 'Dark Mode Disabled'),
+              ],
+            ),
+          );
+        });
   }
 }
