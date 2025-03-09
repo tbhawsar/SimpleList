@@ -1,12 +1,14 @@
-import 'dart:math';
 import 'package:flutter/material.dart';
-import 'package:simple_list/views/pages/settings_page.dart';
 
 class MiniSettingsPage extends StatefulWidget {
-  const MiniSettingsPage({super.key});
+  const MiniSettingsPage({
+    super.key,
+    required this.title,
+  });
 
   @override
   State<MiniSettingsPage> createState() => _MiniSettingsPageState();
+  final String title;
 }
 
 class _MiniSettingsPageState extends State<MiniSettingsPage> {
@@ -22,7 +24,7 @@ class _MiniSettingsPageState extends State<MiniSettingsPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Mini Settings'),
+        title: Text(widget.title),
       ),
       body: SingleChildScrollView(
         child: Padding(

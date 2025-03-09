@@ -1,5 +1,5 @@
-import 'dart:math';
 import 'package:flutter/material.dart';
+import 'package:auto_size_text/auto_size_text.dart';
 
 class InputsPage extends StatefulWidget {
   const InputsPage({super.key});
@@ -19,6 +19,7 @@ class _InputsPageState extends State<InputsPage> {
   String? menuItem;
   @override
   Widget build(BuildContext context) {
+    double btnMinFontSize = 10;
     return Container(
       color: Colors.deepPurple,
       height: double.infinity,
@@ -29,6 +30,87 @@ class _InputsPageState extends State<InputsPage> {
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
+              Row(
+                children: [
+                  Expanded(
+                    child: ElevatedButton(
+                      style: ElevatedButton.styleFrom(
+                        minimumSize: Size(double.infinity, 50),
+                      ),
+                      onPressed: () {
+                        ScaffoldMessenger.of(context).showSnackBar(
+                          SnackBar(
+                            duration: Duration(seconds: 5),
+                            content: Text('Hello, ${controller.text}'),
+                            behavior: SnackBarBehavior.floating,
+                            action: SnackBarAction(
+                              label: 'Undo',
+                              onPressed: () {
+                                controller.clear();
+                              },
+                            ),
+                          ),
+                        );
+                      },
+                      child: AutoSizeText(
+                        'Open SnackBarxxxxxxxxxxxxxxxxxxxxxxxxxxxx',
+                        maxLines: 1,
+                        minFontSize: 10,
+                        overflow: TextOverflow.ellipsis,
+                      ),
+                    ),
+                  ),
+                  Expanded(
+                    child: ElevatedButton(
+                      style: ElevatedButton.styleFrom(
+                        minimumSize: Size(double.infinity, 50),
+                      ),
+                      onPressed: () {
+                        showDialog(
+                            context: context,
+                            builder: (context) {
+                              return AboutDialog();
+                            });
+                      },
+                      child: AutoSizeText(
+                        'Open About',
+                        maxLines: 1,
+                        minFontSize: btnMinFontSize,
+                      ),
+                    ),
+                  ),
+                  Expanded(
+                    child: ElevatedButton(
+                      style: ElevatedButton.styleFrom(
+                        minimumSize: Size(double.infinity, 50),
+                      ),
+                      onPressed: () {
+                        showDialog(
+                            context: context,
+                            builder: (context) {
+                              return AlertDialog(
+                                title: Text('Alert!'),
+                                content: Text('Hello'),
+                                actions: [
+                                  FilledButton(
+                                    onPressed: () {
+                                      Navigator.pop(context);
+                                    },
+                                    child: Text('Close'),
+                                  ),
+                                ],
+                              );
+                            });
+                      },
+                      child: AutoSizeText(
+                        'Open Alert',
+                        maxLines: 1,
+                        minFontSize: btnMinFontSize,
+                      ),
+                    ),
+                  ),
+                ],
+              ),
               TextField(
                 controller: controller,
                 decoration: InputDecoration(
@@ -140,24 +222,24 @@ class _InputsPageState extends State<InputsPage> {
                 value: menuItem,
                 items: [
                   DropdownMenuItem(
-                    child: Text('Item 1'),
                     value: '1',
+                    child: Text('Item 1'),
                   ),
                   DropdownMenuItem(
-                    child: Text('Item 2'),
                     value: '2',
+                    child: Text('Item 2'),
                   ),
                   DropdownMenuItem(
-                    child: Text('Item 3'),
                     value: '3',
+                    child: Text('Item 3'),
                   ),
-                ], 
+                ],
                 onChanged: (String? value) {
                   setState(() {
                     menuItem = value;
                   });
                 },
-                ),
+              ),
             ],
           ),
         ),

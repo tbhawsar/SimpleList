@@ -12,7 +12,6 @@ List<Widget> pages = [
   SettingsPage(),
   InputsPage(),
   ProfilePage(),
-  MiniSettingsPage()
 ];
 
 class WidgetTree extends StatelessWidget {
@@ -31,8 +30,8 @@ class WidgetTree extends StatelessWidget {
                 context,
                 MaterialPageRoute(
                   builder: (context) {
-                    return MiniSettingsPage();
-                    },
+                    return MiniSettingsPage(title: 'Mini Settings Menu',);
+                  },
                 ),
               );
             },
