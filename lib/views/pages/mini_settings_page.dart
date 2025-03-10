@@ -102,7 +102,7 @@ class _MiniSettingsPageState extends State<MiniSettingsPage> {
                   onChanged: (double value) {
                     setState(() {
                       sliderValue = value;
-                      print(value);
+                      //print(value);
                     });
                   },
                 ),
@@ -110,7 +110,7 @@ class _MiniSettingsPageState extends State<MiniSettingsPage> {
                   color: Colors.transparent,
                   child: InkWell(
                     splashColor: Colors.white10,
-                    onTap: () => print('image selected'),
+                    //onTap: () => print('image selected'),
                     child: Container(
                       height: 20,
                       width: double.infinity,
@@ -144,16 +144,16 @@ class _MiniSettingsPageState extends State<MiniSettingsPage> {
                   value: menuItem,
                   items: [
                     DropdownMenuItem(
-                      child: Text('Item 1'),
                       value: '1',
+                      child: Text('Item 1'),
                     ),
                     DropdownMenuItem(
-                      child: Text('Item 2'),
                       value: '2',
+                      child: Text('Item 2'),
                     ),
                     DropdownMenuItem(
-                      child: Text('Item 3'),
                       value: '3',
+                      child: Text('Item 3'),
                     ),
                   ], 
                   onChanged: (String? value) {

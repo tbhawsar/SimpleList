@@ -205,7 +205,7 @@ class _InputsPageState extends State<InputsPage> {
                 onChanged: (double value) {
                   setState(() {
                     sliderValue = value;
-                    print(value);
+                    //print(value);
                   });
                 },
               ),
@@ -213,7 +213,7 @@ class _InputsPageState extends State<InputsPage> {
                 color: Colors.transparent,
                 child: InkWell(
                   splashColor: Colors.white10,
-                  onTap: () => print('image selected'),
+                  //onTap: () => print('image selected'),
                   child: Container(
                     height: 20,
                     width: double.infinity,
