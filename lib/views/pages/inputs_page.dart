@@ -31,6 +31,7 @@ class _InputsPageState extends State<InputsPage> {
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
               Row(
+                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                 children: [
                   Expanded(
                     child: ElevatedButton(
@@ -53,11 +54,19 @@ class _InputsPageState extends State<InputsPage> {
                         );
                       },
                       child: AutoSizeText(
-                        'Open SnackBarxxxxxxxxxxxxxxxxxxxxxxxxxxxx',
+                        'Open SnackBar',
                         maxLines: 1,
                         minFontSize: 10,
                         overflow: TextOverflow.ellipsis,
                       ),
+                    ),
+                  ),
+                  SizedBox(
+                    height: 50,
+                    child: VerticalDivider(
+                      color: Colors.white,
+                      thickness: 2.0,
+                      width: 15,
                     ),
                   ),
                   Expanded(
@@ -77,6 +86,14 @@ class _InputsPageState extends State<InputsPage> {
                         maxLines: 1,
                         minFontSize: btnMinFontSize,
                       ),
+                    ),
+                  ),
+                  SizedBox(
+                    height: 50,
+                    child: VerticalDivider(
+                      color: Colors.white,
+                      thickness: 2.0,
+                      width: 15,
                     ),
                   ),
                   Expanded(
@@ -110,6 +127,13 @@ class _InputsPageState extends State<InputsPage> {
                     ),
                   ),
                 ],
+              ),
+              Divider(
+                color: Colors.white,
+                thickness: 5.0,
+                indent: 50.0,
+                endIndent: 50.0,
+                height: 50,
               ),
               TextField(
                 controller: controller,
