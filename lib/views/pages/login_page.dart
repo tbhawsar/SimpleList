@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:lottie/lottie.dart';
 import 'package:simple_list/views/widget_tree.dart';
-import 'package:simple_list/views/widgets/hero_widget.dart';
 
 class LoginPage extends StatefulWidget {
   const LoginPage({
@@ -39,9 +39,7 @@ class _LoginPageState extends State<LoginPage> {
             child: Column(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                HeroWidget(
-                  title: widget.title,
-                ),
+                Lottie.asset('assets/lotties/home_icon.json'),
                 SizedBox(height: 20.0),
                 TextField(
                   controller: emailController,

@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:shared_preferences/shared_preferences.dart';
+import 'package:simple_list/data/constants.dart';
 import 'package:simple_list/data/notifiers.dart';
 import 'package:simple_list/views/pages/welcome_page.dart';
 
@@ -6,8 +8,25 @@ void main() {
   runApp(MyApp());
 }
 
-class MyApp extends StatelessWidget {
+class MyApp extends StatefulWidget {
   const MyApp({super.key});
+
+  @override
+  State<MyApp> createState() => _MyAppState();
+}
+
+class _MyAppState extends State<MyApp> {
+  @override
+  void initState() {
+    initDarkMode();
+    super.initState();
+  }
+
+  void initDarkMode() async {
+    final SharedPreferences prefs = await SharedPreferences.getInstance();
+    final bool? repeat  = prefs.getBool(KConstants.darkModeKey);
+    isDarkModeNotifier.value = repeat ?? false;
+  }
 
   @override
   Widget build(BuildContext context) {
