@@ -15,3 +15,10 @@ class KTextStyle {
     fontWeight: FontWeight.normal,
   );
 }
+class KContainerText {
+  static const String containerTitle1 = 'Title 1';
+  static const String containerTitle2 = 'Title 2';
+  static const String containerTitle3 = 'Title 3';
+  static const String containerTitle4 = 'Title 4';
+  static const String containerTitle5 = 'Title 5';
+}
