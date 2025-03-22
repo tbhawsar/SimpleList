@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:auto_size_text/auto_size_text.dart';
+import 'package:simple_list/views/pages/expanded_flexible_page.dart';
 
 class InputsPage extends StatefulWidget {
   const InputsPage({super.key});
@@ -222,11 +223,18 @@ class _InputsPageState extends State<InputsPage> {
                 ),
               ),
               ElevatedButton(
-                  onPressed: () {},
+                  onPressed: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(builder: (context) {
+                        return ExpandedFlexiblePage();
+                      }),
+                    );
+                  },
                   style: ElevatedButton.styleFrom(
                     backgroundColor: Colors.teal,
                   ),
-                  child: Text('Click Me')),
+                  child: Text('Click Me to Open Flex Page')),
               ElevatedButton(onPressed: () {}, child: Text('Click Me')),
               FilledButton(onPressed: () {}, child: Text('Click Me')),
               TextButton(onPressed: () {}, child: Text('Click Me')),
