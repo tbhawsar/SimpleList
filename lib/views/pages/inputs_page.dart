@@ -237,7 +237,7 @@ class _InputsPageState extends State<InputsPage> {
                   ),
                   child: Text('Click Me to Open Flex Page')),
               ElevatedButton(onPressed: () {
-                Navigator.push(
+                Navigator.pushReplacement(
                       context,
                       MaterialPageRoute(builder: (context) {
                         return ApiPage();
