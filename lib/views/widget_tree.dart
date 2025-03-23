@@ -5,6 +5,7 @@ import 'package:simple_list/views/pages/inputs_page.dart';
 import 'package:simple_list/views/pages/mini_settings_page.dart';
 import 'package:simple_list/views/pages/profile_page.dart';
 import 'package:simple_list/views/pages/settings_page.dart';
+import 'package:simple_list/views/pages/transitions_page.dart';
 import 'package:simple_list/views/widgets/navbar_widget.dart';
 
 List<Widget> pages = [
@@ -12,6 +13,7 @@ List<Widget> pages = [
   SettingsPage(),
   InputsPage(),
   ProfilePage(),
+  TransitionsPage(),
 ];
 
 class WidgetTree extends StatelessWidget {

@@ -31,6 +31,11 @@ class NavbarWidget extends StatelessWidget {
               activeIcon: Icon(Icons.person),
               label: 'Profile',
             ),
+            BottomNavigationBarItem(
+              icon: Icon(Icons.switch_account_outlined),
+              activeIcon: Icon(Icons.switch_account),
+              label: 'Transitions',
+            ),
           ],
           onTap: (int value) {
             selectedPageNotifier.value = value;
