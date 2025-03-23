@@ -37,11 +37,12 @@ class _ApiPageState extends State<ApiPage> {
         body: FutureBuilder(
           future: getData(),
           builder: (context, AsyncSnapshot snapshot) {
+            Widget widget;
             if (snapshot.connectionState == ConnectionState.waiting) {
-              return Center(child: CircularProgressIndicator());
+              widget = Center(child: CircularProgressIndicator());
             } else if (snapshot.hasData) {
               Activity activity = snapshot.data;
-              return Padding(
+              widget = Padding(
                 padding: const EdgeInsets.symmetric(horizontal: 20.0),
                 child: SingleChildScrollView(
                   child: Column(
@@ -64,8 +65,9 @@ class _ApiPageState extends State<ApiPage> {
                 ),
               );
             } else {
-              return Center(child: Text('Error'));
+              widget = Center(child: Text('Error'));
             }
+            return widget;
           },
         ));
   }
