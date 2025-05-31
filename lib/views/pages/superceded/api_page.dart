@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
-import 'package:simple_list/data/classes/activity_class.dart';
+import 'package:simple_list/data/classes/superceded/activity_class.dart';
 import 'package:simple_list/views/widget_tree.dart';
 import 'dart:convert' as convert;
-import 'package:simple_list/views/widgets/hero_widget.dart';
+import 'package:simple_list/views/widgets/superceded/hero_widget.dart';
 
 class ApiPage extends StatefulWidget {
   const ApiPage({super.key});

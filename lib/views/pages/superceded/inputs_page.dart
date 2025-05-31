@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:auto_size_text/auto_size_text.dart';
-import 'package:simple_list/views/pages/api_page.dart';
-import 'package:simple_list/views/pages/expanded_flexible_page.dart';
+import 'package:simple_list/views/pages/superceded/api_page.dart';
+import 'package:simple_list/views/pages/superceded/expanded_flexible_page.dart';
 
 class InputsPage extends StatefulWidget {
   const InputsPage({super.key});

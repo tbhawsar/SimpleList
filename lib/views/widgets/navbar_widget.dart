@@ -12,29 +12,14 @@ class NavbarWidget extends StatelessWidget {
         return BottomNavigationBar(
           items: [
             BottomNavigationBarItem(
-              icon: Icon(Icons.home_outlined),
-              activeIcon: Icon(Icons.home_filled),
-              label: 'Home',
+              icon: Icon(Icons.list_outlined),
+              activeIcon: Icon(Icons.list),
+              label: 'Lists',
             ),
             BottomNavigationBarItem(
-              icon: Icon(Icons.settings_outlined),
-              activeIcon: Icon(Icons.settings),
-              label: 'Settings',
-            ),
-            BottomNavigationBarItem(
-              icon: Icon(Icons.input_outlined),
-              activeIcon: Icon(Icons.input),
-              label: 'Inputs',
-            ),
-            BottomNavigationBarItem(
-              icon: Icon(Icons.person_outlined),
-              activeIcon: Icon(Icons.person),
-              label: 'Profile',
-            ),
-            BottomNavigationBarItem(
-              icon: Icon(Icons.switch_account_outlined),
-              activeIcon: Icon(Icons.switch_account),
-              label: 'Transitions',
+              icon: Icon(Icons.folder_outlined),
+              activeIcon: Icon(Icons.folder),
+              label: 'Categories',
             ),
           ],
           onTap: (int value) {

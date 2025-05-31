@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:simple_list/views/widgets/hero_widget.dart';
+import 'package:simple_list/views/widgets/superceded/hero_widget.dart';
 
 class LovelyPage extends StatelessWidget {
   const LovelyPage({super.key});

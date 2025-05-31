@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:simple_list/data/constants.dart';
-import 'package:simple_list/views/pages/lovely_page.dart';
-import 'package:simple_list/views/widgets/container_widget.dart';
-import 'package:simple_list/views/widgets/hero_widget.dart';
+import 'package:simple_list/views/pages/superceded/lovely_page.dart';
+import 'package:simple_list/views/widgets/superceded/container_widget.dart';
+import 'package:simple_list/views/widgets/superceded/hero_widget.dart';
 
 class HomePage extends StatelessWidget {
   const HomePage({super.key});

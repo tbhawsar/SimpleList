@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:simple_list/data/notifiers.dart';
-import 'package:simple_list/views/pages/welcome_page.dart';
+import 'package:simple_list/views/pages/superceded/welcome_page.dart';
 
 class ProfilePage extends StatelessWidget {
   const ProfilePage({super.key});
