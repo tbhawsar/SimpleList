@@ -7,8 +7,7 @@ class ListPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-        body: SingleChildScrollView(
+    return SingleChildScrollView(
       child: Padding(
         padding: const EdgeInsets.all(16.0),
         child: Column(
@@ -24,14 +23,6 @@ class ListPage extends StatelessWidget {
           ).toList(),
         ),
       ),
-    ),
-    floatingActionButton: FloatingActionButton(
-      onPressed: () {
-        // Navigate to add new list page (to be implemented)
-      },
-      child: const Icon(Icons.add),
-      tooltip: 'Add New List',
-    ),
     );
   }
 }

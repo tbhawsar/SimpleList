@@ -22,3 +22,10 @@
 //   static const String containerTitle4 = 'Title 4';
 //   static const String containerTitle5 = 'Title 5';
 // }
+
+class KNavbarBtnSize {
+  static const double smallButtonSize = 50.0;
+  }
+class KNavbarSize {
+  static const double height = 70.0;
+  }
